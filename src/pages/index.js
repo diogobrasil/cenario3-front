@@ -32,7 +32,7 @@ export default function Home() {
   function deletar(id) {
     setLoading(true);
     axios
-      .delete(`${apiUrl}/user/${id}`)
+      .delete(`${apiUrl}/users/${id}`)
       .then((res) => {
         alert("Usuário deletado");
         setAtualiza(!atualiza);
@@ -63,7 +63,7 @@ export default function Home() {
       return;
     }
     axios
-      .put(`${apiUrl}/user/${id}`, data)
+      .put(`${apiUrl}/users/${id}`, data)
       .then((res) => {
         alert("Usuário editado");
         setAtualiza(!atualiza);
@@ -88,7 +88,7 @@ export default function Home() {
       return;
     }
     axios
-      .post(`${apiUrl}/user`, data)
+      .post(`${apiUrl}/users`, data)
       .then((res) => {
         setAtualiza(!atualiza);
         setLoading(false);
@@ -102,7 +102,7 @@ export default function Home() {
   function buscarLista() {
     setLoading(true);
     axios
-      .get(`${apiUrl}/user`)
+      .get(`${apiUrl}/users`)
       .then((res) => {
         setLista(res.data);
         setLoading(false);
