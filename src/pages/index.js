@@ -102,7 +102,7 @@ export default function Home() {
   function buscarLista() {
     setLoading(true);
     axios
-      .get(`${apiUrl}/users`)
+      .get(`${apiUrl}/user`)
       .then((res) => {
         setLista(res.data);
         setLoading(false);
