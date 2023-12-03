@@ -109,6 +109,9 @@ export default function Home() {
       })
       .catch((err) => {
         console.log(err);
+        if (err.response.status === 404) {
+          alert("Nenhum usuário encontrado");
+        }
         setLoading(false);
       });
   }
